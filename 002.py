@@ -10,5 +10,17 @@ previous two terms. By starting with 1 and 2, the first 10 terms will be:
 Find the sum of all the even-valued terms in the sequence which do not
 exceed four million.
 """
+def printfibs(limit):
+		fib_nums = [0,1,2] "Lay out the base case"
+		i = 3 "Start at the third term in the sequence"
+		sum = 2 "Take into account the first even-valued term"
+		while fib_nums[-1] < limit:
+				temp = fib_nums[i-1] + fib_nums[i-2]
+				fib_nums.append(temp)
+				if temp%2 == 0:
+						sum += temp
+				i += 1
+		return sum
 
-
+limit = 4000000
+print printfibs(limit)
